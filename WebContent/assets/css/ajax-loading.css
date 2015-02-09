@@ -1,0 +1,28 @@
+#busy {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.2;
+	-moz-opacity: 0.2;
+	filter: alpha(opacity = 2);
+	font-weight: bold;
+	text-align: center;
+	font-size: 2em;
+	color: gray;
+	visibility: hidden;
+	text-align: center;
+}
+
+#busy #busy_image {
+	top: 45%;
+	left: 46%;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	background: url("../images/ajax-loading/indicator-big.gif") no-repeat transparent;
+}
