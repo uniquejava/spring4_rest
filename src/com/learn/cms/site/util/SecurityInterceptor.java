@@ -18,12 +18,14 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 /**
- * This security interceptor will intercept http request coming from browser or mobile if
- * the request url starts with '/admin'. It will send a json response if
- * request comes from ajax or mobile, otherwise it will send a login page.
- *
+ * This security interceptor will intercept http request coming from browser or
+ * mobile if the request url starts with '/admin'. <br>
+ * 
+ * Send a json response if request comes from ajax or mobile, send a login page
+ * otherwise.
+ * 
  * @author cyper
- *
+ * 
  */
 @Service
 public class SecurityInterceptor extends HandlerInterceptorAdapter {

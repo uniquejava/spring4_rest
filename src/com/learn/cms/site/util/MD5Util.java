@@ -37,7 +37,7 @@ public class MD5Util {
 	 */
 	public static void main(String args[]) throws Exception {
 		String str = new String("admin");
-		System.out.println("be4：" + str);
-		System.out.println("MD5：" + md5Encode(str));
+		System.out.println("be4:" + str);
+		System.out.println("MD5:" + md5Encode(str));
 	}
 }

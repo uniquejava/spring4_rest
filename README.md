@@ -18,34 +18,23 @@ This project will demo the techniques that would be used in our project. This ve
 1. Get the code
 `git clone https://github.com/uniquejava/spring4_rest.git`
 
-2. Open project in eclipse, the maven plugin should automatically download the required jars.
+2. Open project in eclipse directly, the maven plugin(built-in with Eclipse 4.x) should automatically download the required jars.
 >Also you can open this project in IDEA but ensure you right click on the pom.xml and mark this project as a Maven project.
 
-3. Run script `doc/sql/mysql.sql`
-4. Deploy to Tomcat
+3. For eclipse users, after you imported the project, there are 2 settings:
+ * Right click on Project > Properties > `Project Facets`, check the "Java 1.6" and "Dynamic Web Module 3.0".
+ * Then click on `Web Project Settings`, change the context root to `rest` or any context root u like.
 
-5. Open in browser: http://localhost:8080/rest/
+4. Open `cms.properties`, change your database password there if needed.
 
+5. Run script `doc/sql/*.sql`, click [here](setup_database.md) for more details on how to setup database (MySQL,DB2,HSQLDB).
 
-###Notes on Eclipse
-When you run this project in Eclipse, you may encounter below exceptions.
+6. Deploy to Tomcat
 
-java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet
-
-
-The solution is very simple, you just need to add the "Maven Dependency" in the Deployement Assembly
-
-    right click on your project and choose properties.
-    click on Deployement Assembly.
-    click add
-    click on "Java Build Path Entries"
-    select Maven Dependencies"
-    click Finish.
-
-That's it!! rebuild and deploy again
+7. Open in browser: http://localhost:8080/rest/
 
 ###Components
-1. spring 4.1.4
+1. Spring 4.1.4
 2. jackson 2.5
 1. ~~bootstrap-3.3.2~~
 2. jquery-1.11.2
@@ -78,6 +67,7 @@ Here is the environment I am working on.
 2. Eclipse JEE 4.3
 3. Tomcat 7.0.57
 4. JDK1.6.0_45
+5. Maven3.2.5
 
 However, this project is fully tested on Win7 + WAS8.5
 
