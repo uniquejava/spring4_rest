@@ -7,12 +7,12 @@ This project will demo the techniques that would be used in our project. This ve
 1. ~~Web services security~~(done)
 2. ~~Asked one question on [stackoverflow](http://stackoverflow.com/questions/28413070/in-spring-mvc-4-1-is-there-any-nonresponsebody-to-return-a-normal-view)~~ (replied)
 3. ~~RESTful CRUD (@RestController in Spring4.x)~~(done)
-3. ~~Slf4j + Log4j~~(done)
-4. Error handling(ongoing)
-3. what's the difference between ctx-annotation-config and mvc-annotation-driven(reading)
-3. i18n: MessageSourceAware
-3. A simple Android native client consuming RESTful service.(reading a book)
-4. A hybrid mobile client consuming RESTful service(learning).
+4. ~~Slf4j + Log4j~~(done)
+5. Error handling(ongoing)
+6. what's the difference between ctx-annotation-config and mvc-annotation-driven(reading)
+7. i18n: MessageSourceAware
+8. A simple Android native client consuming RESTful service.(reading a book)
+9. A hybrid mobile client consuming RESTful service(learning).
 
 ###How to setup
 1. Get the code
@@ -34,7 +34,7 @@ This project will demo the techniques that would be used in our project. This ve
 7. Open in browser: http://localhost:8080/rest/
 
 ###Components
-1. Spring 4.1.4
+1. Spring 4.2.4
 2. jackson 2.5
 1. ~~bootstrap-3.3.2~~
 2. jquery-1.11.2
@@ -63,11 +63,11 @@ Corporation version is for internal use and close source.
 ###Environment
 Here is the environment I am working on.
 
-1. Ubuntu12.04.5 LTS
-2. Eclipse JEE 4.3
-3. Tomcat 7.0.57
-4. JDK1.6.0_45
-5. Maven3.2.5
+1. Ubuntu12.04.5 LTS (Mac OSX 10.11)
+2. Eclipse JEE 4.3 (Eclipse JEE MARS.1)
+3. Tomcat 7.0.57 (Tomcat 8.x)
+4. JDK1.6.0\_45 (JDK1.7.0\_80)
+5. Maven3.2.5 (Maven3.3.3)
 
 However, this project is fully tested on Win7 + WAS8.5
 

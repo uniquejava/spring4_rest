@@ -14,6 +14,9 @@ you can install `mysql-5.5.42-winx64.msi` (size: 42M)
 
 Or you can use `mysql -u user_name -h localhost -p db_name < file_name.sql`.
 
+####MAMP users(Mac OSX)
+Run `/Applications/MAMP/Library/bin/mysql -uUsername -pPassword`
+
 ####DB2 10.x
 If you choose to use DB2, assume the database name is `cms`, the user and schema both are `db2inst1`,
 type the following command to setup the database:

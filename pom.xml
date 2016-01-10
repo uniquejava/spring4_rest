@@ -7,7 +7,7 @@
     <packaging>war</packaging>
     <properties>
         <jdk.version>1.7</jdk.version>
-        <spring.version>4.1.4.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <jstl.version>1.2</jstl.version>
         <junit.version>4.11</junit.version>
         <logback.version>1.0.13</logback.version>
