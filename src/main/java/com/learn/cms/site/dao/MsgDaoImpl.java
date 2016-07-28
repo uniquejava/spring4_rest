@@ -1,16 +1,15 @@
 package com.learn.cms.site.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.learn.cms.site.model.Msg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.learn.cms.site.model.Msg;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class MsgDaoImpl implements MsgDao {
@@ -18,10 +17,8 @@ public class MsgDaoImpl implements MsgDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@Override
 	public List<Msg> findAll() {
 		List<Msg> result = jdbcTemplate.query("select * from msg", new Object[] {}, new RowMapper<Msg>() {
-			@Override
 			public Msg mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Msg o = new Msg();
 				o.setId(rs.getLong("id"));
@@ -39,12 +36,10 @@ public class MsgDaoImpl implements MsgDao {
 		return result;
 	}
 
-	@Override
 	public Msg findById(Long id) {
 		String sql = "select * from msg where id=?";
 		Msg result = jdbcTemplate.queryForObject(sql, new Object[] { id }, new RowMapper<Msg>() {
 
-			@Override
 			public Msg mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Msg o = new Msg();
 				o.setId(rs.getLong("id"));
@@ -62,7 +57,6 @@ public class MsgDaoImpl implements MsgDao {
 		return result;
 	}
 
-	@Override
 	public void saveMsg(Msg msg) {
 		String sql = "insert into msg(name,content,phone,qq,ip,status,create_time) values(?,?,?,?,?,?, now())";
 
@@ -78,7 +72,6 @@ public class MsgDaoImpl implements MsgDao {
 
 	}
 
-	@Override
 	public void updateMsg(Msg msg) {
 		String sql = "update msg set name=?,content=?,phone=?,qq=?,ip=?,status=? where id=?";
 
@@ -94,7 +87,6 @@ public class MsgDaoImpl implements MsgDao {
 		jdbcTemplate.update(sql, params.toArray());
 	}
 
-	@Override
 	public void deleteById(Long id) {
 		jdbcTemplate.update("delete from msg where id=?", id);
 

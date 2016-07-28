@@ -1,10 +1,6 @@
 package com.learn.cms.site.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.learn.cms.site.model.Admin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.learn.cms.site.model.Admin;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {
@@ -21,11 +20,9 @@ public class AdminDaoImpl implements AdminDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@Override
 	public List<Admin> findAll() {
 		List<Admin> result = jdbcTemplate.query("select * from admin", new Object[] {},
 				new RowMapper<Admin>() {
-					@Override
 					public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
 						Admin admin = new Admin();
 						admin.setId(rs.getLong("id"));
@@ -38,7 +35,6 @@ public class AdminDaoImpl implements AdminDao {
 		return result;
 	}
 
-	@Override
 	public Admin findById(Long id) {
 		String sql = "select * from admin where id=?";
 
@@ -50,7 +46,6 @@ public class AdminDaoImpl implements AdminDao {
 
 		Admin result = jdbcTemplate.queryForObject(sql, params.toArray(), new RowMapper<Admin>() {
 
-			@Override
 			public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Admin admin = new Admin();
 				admin.setId(rs.getLong("id"));
