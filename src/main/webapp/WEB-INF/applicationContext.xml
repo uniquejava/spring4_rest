@@ -17,6 +17,8 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<context:component-scan base-package="com.learn.cms.site" />
+
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:cms.properties" />
@@ -52,25 +54,36 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+
+	<!--  enables the use of the @Transaction annotation -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
+    <!-- Serve static resources -->
+    <mvc:resources mapping="/assets/**" location="/assets/" />
 
-	<context:annotation-config />
-	<context:component-scan base-package="com.learn.cms.site" />
-	<mvc:annotation-driven content-negotiation-manager="cnManager" />
+    <!-- we need to switch on the content negotiation manager by plug-in it into the overall configuration -->
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager" />
 
-	<!-- Serve static resources -->
-	<mvc:resources mapping="/assets/**" location="/assets/" />
 
-	<!-- see http://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc/ -->
-	<bean id="cnManager"
+	<!-- see http://www.baeldung.com/spring-mvc-content-negotiation-json-xml -->
+	<bean id="contentNegotiationManager"
 		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-		<property name="favorPathExtension" value="false" />
-		<property name="favorParameter" value="false" />
+
+        <!-- method 1: curl http://localhost:8080/spring-mvc-java/employee/10.json -->
+		<property name="favorPathExtension" value="true" />
+
+        <!-- method 2: curl http://localhost:8080/spring-mvc-java/employee/10?format=json -->
+		<property name="favorParameter" value="true" />
+        <property name="parameterName" value="format"/>
+
+        <!-- method 3: Via Http Request header (Accept:application/json, text/html) -->
 		<property name="ignoreAcceptHeader" value="false" />
 		<property name="useJaf" value="false" />
+
+
 		<property name="defaultContentType" value="application/json" />
 
+        <!-- mediaTypes is useful only when favorParameter is set to true -->
 		<property name="mediaTypes">
 			<map>
 				<entry key="json" value="application/json" />
