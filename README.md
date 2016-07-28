@@ -27,7 +27,7 @@ This project will demo the techniques that would be used in our project. This ve
 
 4. Open `cms.properties`, change your database password there if needed.
 
-5. Run script `doc/sql/*.sql`, click [here](setup_database.md) for more details on how to setup database (MySQL,DB2,HSQLDB).
+5. Run script `doc/sql/*.sql`, click [here](doc/setup_database.md) for more details on how to setup database (MySQL,DB2,HSQLDB).
 
 6. Deploy to Tomcat
 

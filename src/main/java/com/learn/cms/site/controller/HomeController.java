@@ -1,12 +1,10 @@
 package com.learn.cms.site.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import java.util.Random;
-
-import javax.servlet.http.HttpSession;
-
+import com.learn.cms.site.model.Admin;
+import com.learn.cms.site.service.AdminService;
+import com.learn.cms.site.util.CmsConstants;
+import com.learn.cms.site.util.MD5Util;
+import com.learn.cms.site.util.Result;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.learn.cms.site.model.Admin;
-import com.learn.cms.site.service.AdminService;
-import com.learn.cms.site.util.CmsConstants;
-import com.learn.cms.site.util.MD5Util;
-import com.learn.cms.site.util.Result;
+import javax.servlet.http.HttpSession;
+import java.util.Random;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * This controller bypass SecurityInterceptor, because the URL not begin with
@@ -96,7 +94,7 @@ public class HomeController {
 
 				// mimic unexpected system exception here
 				if (new Random().nextBoolean()) {
-					Thread.sleep(2000);
+					Thread.sleep(1000);
 					throw new Exception("bad luck, try again.");
 				}
 

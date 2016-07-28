@@ -1,16 +1,14 @@
 package com.learn.cms.site.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.servlet.http.HttpSession;
-
+import com.learn.cms.site.util.CmsConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.learn.cms.site.util.CmsConstants;
+import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * This controller will be handled by SecurityInterceptor first.

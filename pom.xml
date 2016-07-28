@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ibm</groupId>
-    <artifactId>brandedge-site</artifactId>
+    <artifactId>spring4_rest</artifactId>
     <version>0.1.0</version>
     <packaging>war</packaging>
     <properties>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <spring.version>4.2.4.RELEASE</spring.version>
         <jstl.version>1.2</jstl.version>
         <junit.version>4.11</junit.version>

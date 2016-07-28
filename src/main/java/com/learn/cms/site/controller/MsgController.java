@@ -1,11 +1,8 @@
 package com.learn.cms.site.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import java.util.List;
-import java.util.Map;
-
+import com.learn.cms.site.model.Msg;
+import com.learn.cms.site.service.MsgService;
+import com.learn.cms.site.util.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.learn.cms.site.model.Msg;
-import com.learn.cms.site.service.MsgService;
-import com.learn.cms.site.util.Result;
+import java.util.List;
+import java.util.Map;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * This controller demonstrates RESTful service, note this RESTful service is
