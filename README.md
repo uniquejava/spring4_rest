@@ -3,7 +3,7 @@ This project will demo the techniques that would be used in our project. This ve
 
 ![login page](doc/images/cms_login.png)
 
-###Todo
+### Todo
 1. ~~Web services security~~(done)
 2. ~~Asked one question on [stackoverflow](http://stackoverflow.com/questions/28413070/in-spring-mvc-4-1-is-there-any-nonresponsebody-to-return-a-normal-view)~~ (replied)
 3. ~~RESTful CRUD (@RestController in Spring4.x)~~(done)
@@ -14,7 +14,7 @@ This project will demo the techniques that would be used in our project. This ve
 8. A simple Android native client consuming RESTful service.(reading a book)
 9. A hybrid mobile client consuming RESTful service(learning).
 
-###How to setup
+### How to setup
 1. Get the code
 `git clone https://github.com/uniquejava/spring4_rest.git`
 
@@ -22,8 +22,9 @@ This project will demo the techniques that would be used in our project. This ve
 >Also you can open this project in IDEA but ensure you right click on the pom.xml and mark this project as a Maven project.
 
 3. For eclipse users, after you imported the project, there are 2 settings:
- * Right click on Project > Properties > `Project Facets`, check the "Java 1.6" and "Dynamic Web Module 3.0".
+ * Right click on Project > Properties > `Project Facets`, check the "Java 1.8" and "Dynamic Web Module 3.0".
  * Then click on `Web Project Settings`, change the context root to `rest` or any context root u like.
+ * Click `Deployment Assembly`, add a new mapping `/src/main/webapp` <==> `/`.
 
 4. Open `cms.properties`, change your database password there if needed.
 
@@ -33,13 +34,13 @@ This project will demo the techniques that would be used in our project. This ve
 
 7. Open in browser: http://localhost:8080/rest/
 
-###Components
+### Components
 1. Spring 4.2.4
 2. jackson 2.5
 1. ~~bootstrap-3.3.2~~
 2. jquery-1.11.2
 
-###Roadmap
+### Roadmap
 Bare version will be proactive and will demo/use the latest techniques if i am happy.
 
 General version would be done if i have time.
@@ -60,14 +61,18 @@ Corporation version is for internal use and close source.
 `Corporation`:
 * [V18](https://github.com/ibmmxlabs/v18) integeration
 
-###Environment
+### Environment
 Here is the environment I am working on.
 
-1. Ubuntu12.04.5 LTS (Mac OSX 10.11)
-2. Eclipse JEE 4.3 (Eclipse JEE MARS.1)
+1. Ubuntu12.04.5 LTS (Mac OSX 10.12)
+2. Eclipse JEE 4.7 (Eclipse JEE Oxygen)
 3. Tomcat 7.0.57 (Tomcat 8.x)
-4. JDK1.6.0\_45 (JDK1.7.0\_80)
+4. JDK1.6.0\_45 (JDK1.8)
 5. Maven3.2.5 (Maven3.3.3)
 
 However, this project is fully tested on Win7 + WAS8.5
 
+### References
+1. https://stackoverflow.com/questions/31835033/web-xml-is-missing-and-failonmissingwebxml-is-set-to-true
+2. https://stackoverflow.com/questions/13589470/the-matching-wildcard-is-strict-but-no-declaration-can-be-found-for-element-co
+3. https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/

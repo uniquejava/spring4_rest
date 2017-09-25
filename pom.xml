@@ -7,12 +7,14 @@
     <packaging>war</packaging>
     <properties>
         <jdk.version>1.8</jdk.version>
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>4.3.11.RELEASE</spring.version>
         <jstl.version>1.2</jstl.version>
         <junit.version>4.11</junit.version>
-        <logback.version>1.0.13</logback.version>
-        <jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
-        <slf4j.version>1.7.10</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+        <jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
     <dependencies>
 
@@ -130,7 +132,7 @@
         <!-- <dependency> -->
         <!-- <groupId>org.hsqldb</groupId> -->
         <!-- <artifactId>hsqldb</artifactId> -->
-        <!-- <version>2.3.2</version> -->
+        <!-- <version>2.4.0</version> -->
         <!-- </dependency> -->
 
         <!--DB2 drivers -->
