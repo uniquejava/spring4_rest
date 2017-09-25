@@ -10,29 +10,29 @@ import java.util.List;
 
 @Service
 public class MsgServiceImpl implements MsgService {
-	@Autowired
-	private MsgDao msgDao;
+    @Autowired
+    private MsgDao msgDao;
 
-	public List<Msg> findAll() {
-		return msgDao.findAll();
-	}
+    public List<Msg> findAll() {
+        return msgDao.findAll();
+    }
 
-	public Msg findById(Long id) {
-		return msgDao.findById(id);
-	}
+    public Msg findById(Long id) {
+        return msgDao.findById(id);
+    }
 
-	@Transactional
-	public void saveMsg(Msg msg) {
-		msgDao.saveMsg(msg);
-	}
+    @Transactional
+    public void saveMsg(Msg msg) {
+        msgDao.saveMsg(msg);
+    }
 
-	@Transactional
-	public void updateMsg(Msg msg) {
-		msgDao.updateMsg(msg);
-	}
+    @Transactional
+    public void updateMsg(Msg msg) {
+        msgDao.updateMsg(msg);
+    }
 
-	public void deleteById(Long id) {
-		msgDao.deleteById(id);
-	}
+    public void deleteById(Long id) {
+        msgDao.deleteById(id);
+    }
 
 }

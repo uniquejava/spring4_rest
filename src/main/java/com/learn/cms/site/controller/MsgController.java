@@ -24,133 +24,137 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  * secured by SecurityInterceptor, you cannot call it directly, you need to do
  * BASIC authentication from your request.<br>
  * <br>
- * 
+ *
  * @author cyper
  */
 @Controller
 public class MsgController {
-	private final Logger logger = LoggerFactory.getLogger(MsgController.class);
+    private final Logger logger = LoggerFactory.getLogger(MsgController.class);
 
-	@Autowired
-	private MsgService msgService;
+    @Autowired
+    private MsgService msgService;
 
-	/**
-	 * RESTful method, list all msgs.
-	 * 
-	 * @return
-	 */
-	@RequestMapping(value = "/admin/msg", produces = { "application/json" }, method = GET)
-	public @ResponseBody
-	Result list() {
-		try {
-			List<Msg> msgs = msgService.findAll();
-			return Result.ok(msgs);
+    /**
+     * RESTful method, list all msgs.
+     *
+     * @return
+     */
+    @RequestMapping(value = "/admin/msg", produces = {"application/json"}, method = GET)
+    public
+    @ResponseBody
+    Result list() {
+        try {
+            List<Msg> msgs = msgService.findAll();
+            return Result.ok(msgs);
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			logger.error(e.getMessage(), e);
-			return Result.error(e.getMessage());
-		}
-	}
+            logger.error(e.getMessage(), e);
+            return Result.error(e.getMessage());
+        }
+    }
 
-	/**
-	 * View-based method, list all msgs.
-	 * 
-	 * @return
-	 */
-	@RequestMapping(value = "/admin/msg", method = GET)
-	public String list(Model model) {
-		// Call RESTful method to avoid repeating lookup logic
-		model.addAttribute("msgs", list().getData());
+    /**
+     * View-based method, list all msgs.
+     *
+     * @return
+     */
+    @RequestMapping(value = "/admin/msg", method = GET)
+    public String list(Model model) {
+        // Call RESTful method to avoid repeating lookup logic
+        model.addAttribute("msgs", list().getData());
 
-		// FIXME deal with possible system exception here
+        // FIXME deal with possible system exception here
 
-		// Return the view to use for rendering the response
-		return "admin/msg/msg_index";
-	}
+        // Return the view to use for rendering the response
+        return "admin/msg/msg_index";
+    }
 
-	/**
-	 * create or update a msg.
-	 * 
-	 * @param param
-	 * @return
-	 */
-	@RequestMapping(value = "/admin/msg", method = POST)
-	public @ResponseBody
-	Result save(@RequestBody Map<String, String> param) {
+    /**
+     * create or update a msg.
+     *
+     * @param param
+     * @return
+     */
+    @RequestMapping(value = "/admin/msg", method = POST)
+    public
+    @ResponseBody
+    Result save(@RequestBody Map<String, String> param) {
 
-		logger.debug(param.toString());
+        logger.debug(param.toString());
 
-		String id = param.get("id");
+        String id = param.get("id");
 
-		try {
-			Msg msg = new Msg();
-			if (id != null) {
-				msg.setId(Long.valueOf(id));
-				msg = msgService.findById(msg.getId());
-			}
+        try {
+            Msg msg = new Msg();
+            if (id != null) {
+                msg.setId(Long.valueOf(id));
+                msg = msgService.findById(msg.getId());
+            }
 
-			msg.setName(param.get("name"));
-			msg.setContent(param.get("content"));
-			msg.setPhone(param.get("phone"));
-			msg.setQq(param.get("qq"));
-			msg.setStatus(Integer.valueOf(param.get("status")));
+            msg.setName(param.get("name"));
+            msg.setContent(param.get("content"));
+            msg.setPhone(param.get("phone"));
+            msg.setQq(param.get("qq"));
+            msg.setStatus(Integer.valueOf(param.get("status")));
 
-			if (id != null) {
-				msgService.updateMsg(msg);
+            if (id != null) {
+                msgService.updateMsg(msg);
 
-			} else {
-				msgService.saveMsg(msg);
-			}
+            } else {
+                msgService.saveMsg(msg);
+            }
 
-			return Result.OK;
+            return Result.OK;
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			logger.error(e.getMessage(), e);
-			return Result.error(e.getMessage());
-		}
-	}
+            logger.error(e.getMessage(), e);
+            return Result.error(e.getMessage());
+        }
+    }
 
-	/**
-	 * view a single msg.
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@RequestMapping(value = "/admin/msg/{id}", method = GET)
-	public @ResponseBody
-	Result view(@PathVariable Long id) {
-		try {
-			Msg msg = msgService.findById(id);
-			return Result.ok(msg);
+    /**
+     * view a single msg.
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/admin/msg/{id}", method = GET)
+    public
+    @ResponseBody
+    Result view(@PathVariable Long id) {
+        try {
+            Msg msg = msgService.findById(id);
+            return Result.ok(msg);
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			logger.error(e.getMessage(), e);
-			return Result.error(e.getMessage());
-		}
+            logger.error(e.getMessage(), e);
+            return Result.error(e.getMessage());
+        }
 
-	}
+    }
 
-	/**
-	 * delete a msg.
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@RequestMapping(value = "/admin/msg/delete/{id}", method = GET)
-	public @ResponseBody
-	Result delete(@PathVariable Long id) {
-		try {
-			msgService.deleteById(id);
-			return Result.OK;
+    /**
+     * delete a msg.
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/admin/msg/delete/{id}", method = GET)
+    public
+    @ResponseBody
+    Result delete(@PathVariable Long id) {
+        try {
+            msgService.deleteById(id);
+            return Result.OK;
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			logger.error(e.getMessage(), e);
-			return Result.error(e.getMessage());
-		}
-	}
+            logger.error(e.getMessage(), e);
+            return Result.error(e.getMessage());
+        }
+    }
 
 }

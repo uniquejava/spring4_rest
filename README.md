@@ -14,12 +14,11 @@ This project will demo the techniques that would be used in our project. This ve
 8. A simple Android native client consuming RESTful service.(reading a book)
 9. A hybrid mobile client consuming RESTful service(learning).
 
-### How to setup
+### How to setup (Eclipse)
 1. Get the code
 `git clone https://github.com/uniquejava/spring4_rest.git`
 
 2. Open project in eclipse directly, the maven plugin(built-in with Eclipse 4.x) should automatically download the required jars.
->Also you can open this project in IDEA but ensure you right click on the pom.xml and mark this project as a Maven project.
 
 3. For eclipse users, after you imported the project, there are 2 settings:
  * Right click on Project > Properties > `Project Facets`, check the "Java 1.8" and "Dynamic Web Module 3.0".
@@ -34,11 +33,14 @@ This project will demo the techniques that would be used in our project. This ve
 
 7. Open in browser: http://localhost:8080/rest/
 
-### Components
-1. Spring 4.2.4
+### Intellij IDEA Users
+Also you can open this project in IDEA but ensure you right click on the pom.xml and mark this project as a Maven project.
+
+### Tech stack
+1. Spring 4.x
 2. jackson 2.5
 1. ~~bootstrap-3.3.2~~
-2. jquery-1.11.2
+2. jquery-3.x
 
 ### Roadmap
 Bare version will be proactive and will demo/use the latest techniques if i am happy.
@@ -55,7 +57,7 @@ Corporation version is for internal use and close source.
 * cache
 
 `General`
-* bootstrap3.3.2
+* bootstrap3.3.7
 * kindeditor
 
 `Corporation`:
